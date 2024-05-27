@@ -32,6 +32,10 @@ public class UserService {
     return userRepo.findAll();
   }
 
+  public UserInfo getById(String id) {
+    return userRepo.findById(id).orElse(null);
+  }
+
   public User saveUser(UserInfo user) {
     user.setPassword(encoder.encode(user.getPassword()));
     return userRepo.save(user);

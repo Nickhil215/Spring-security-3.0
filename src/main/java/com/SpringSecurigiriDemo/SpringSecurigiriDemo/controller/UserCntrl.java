@@ -44,8 +44,8 @@ public class UserCntrl {
 
   @GetMapping("/get/{id}")
   @PreAuthorize("hasAnyAuthority('ROLE_USER')")
-  public List<UserInfo> getById(@PathVariable String id) {
-    return userService.get();
+  public UserInfo getById(@PathVariable String id) {
+    return userService.getById(id);
   }
 
     @GetMapping("/welcome")
